@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 7340562809117908614}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.3, y: 0.3, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: bc6130627cf2abe43929979d09c71ff4, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 55424de9b921c00429806fd54d7efc26, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -100,7 +100,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 1.4
+  m_Radius: 1
 --- !u!50 &7340562809117908611
 Rigidbody2D:
   serializedVersion: 4
@@ -135,3 +135,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0.05
+  HP: 3
+  defaultImage: {fileID: 21300000, guid: 55424de9b921c00429806fd54d7efc26, type: 3}
+  damageImage: {fileID: 21300000, guid: f4bb74a984c977043a5ca3cdd587c227, type: 3}
+  twosteps_damageImage: {fileID: 21300000, guid: e4fafef9ec1ab1a4e9e34bd5c19c8b0b, type: 3}
