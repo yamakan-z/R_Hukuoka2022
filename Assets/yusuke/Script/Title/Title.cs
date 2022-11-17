@@ -7,6 +7,6 @@ public class Title : MonoBehaviour
 {
     public void OnClickStartButton()
     {
-        SceneManager.LoadScene("");
+        SceneManager.LoadScene("kari Scene");
     }
 }
