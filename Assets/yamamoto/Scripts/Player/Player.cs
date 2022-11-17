@@ -79,6 +79,17 @@ public class Player : MonoBehaviour
         }
     }
 
+    //当たり判定（トリガー）
+    private void OnTriggerEnter2D(Collider2D collision)//
+    {
+        if (collision.gameObject.tag == "Enemy")
+        {
+            Debug.Log("敵と接触した！");
+
+            Damage();//ダメージ処理へ
+        }
+    }
+
     /// <summary>
     /// ダメージ処理
     /// </summary>
