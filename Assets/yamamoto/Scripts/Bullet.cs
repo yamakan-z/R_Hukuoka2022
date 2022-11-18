@@ -17,15 +17,8 @@ public class Bullet : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
         float add_move = moveSpeed * Time.deltaTime;
         transform.Translate(moveVec * add_move);
-
-        //画面外に出たら削除
-        if (!GetComponent<Renderer>().isVisible)
-        {
-            Destroy(this.gameObject);//弾削除
-        }
     }
 
     public void SetMoveSpeed(float _speed)
@@ -45,6 +38,12 @@ public class Bullet : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             Debug.Log("プレイヤーと接触した！");
+            Destroy(this.gameObject);//弾削除
+        }
+
+        if (collision.gameObject.tag == "DeleteArea")
+        {
+           // Debug.Log("削除エリアと接触した！");
             Destroy(this.gameObject);//弾削除
         }
     }
