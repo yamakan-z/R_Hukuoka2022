@@ -31,7 +31,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8093164840657301358}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.7, y: 0.7, z: 1}
   m_Children: []
@@ -146,8 +146,8 @@ MonoBehaviour:
   speed: 0.05
   HP: 3
   defaultImage: {fileID: 21300000, guid: 55424de9b921c00429806fd54d7efc26, type: 3}
-  damageImage: {fileID: 21300000, guid: f2d55a0060b928c4f81d6d92d2ad0491, type: 3}
-  twosteps_damageImage: {fileID: 21300000, guid: 877c738442c1cdc4692af48c88578953, type: 3}
+  damageImage: {fileID: 21300000, guid: a231bb8f826ad9340aa55aa9ed99e041, type: 3}
+  twosteps_damageImage: {fileID: 21300000, guid: c108b89d6fdcb89439b32d6668072dac, type: 3}
 --- !u!114 &5107311426442253904
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -178,7 +178,7 @@ Animation:
   m_GameObject: {fileID: 8093164840657301358}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 0b6957d8e8cdc8d448bef50262e2339d, type: 2}
+  m_Animation: {fileID: 7400000, guid: 34c1f1e210e65b243afda7511da4bcb2, type: 2}
   m_Animations: []
   m_WrapMode: 0
   m_PlayAutomatically: 1
@@ -194,7 +194,7 @@ Animator:
   m_GameObject: {fileID: 8093164840657301358}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: f2a0d46196d78ee49bf5b2d7f2743fea, type: 2}
+  m_Controller: {fileID: 9100000, guid: 08e057cc88819ba43a33b91a682ebe1d, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
