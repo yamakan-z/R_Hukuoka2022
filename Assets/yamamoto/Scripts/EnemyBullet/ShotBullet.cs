@@ -47,8 +47,6 @@ public class ShotBullet : MonoBehaviour
                 player = GameObject.Find("Player");
                 break;
         }
-
-        Shot();
     }
 
     // Update is called once per frame
