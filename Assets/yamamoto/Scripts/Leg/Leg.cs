@@ -11,21 +11,16 @@ public class Leg : MonoBehaviour
 
     Vector2 legpos;//足の初期位置を入れる
 
-    private float speed;//足のスピード
-
     private float backleg_speed;//足の戻るスピード
 
     public bool legdown;//足を下す
 
-    public bool b;
-
-    public bool c;
+    public bool legground;//足が地面についた
 
     // Start is called before the first frame update
     void Start()
     {
-        speed = 0.5f;
-
+      
         backleg_speed = 0.1f;
 
         //FreezePositionYをオンにする
@@ -49,24 +44,31 @@ public class Leg : MonoBehaviour
             rb.AddForce(force, ForceMode2D.Force);  //力を加える
         }
 
-       if(b)
+       if(legground)
         {
             legdown = false;
            
             rb.constraints = RigidbodyConstraints2D.FreezePositionY;
+
+            // コルーチンの起動
+            StartCoroutine(ReturnLeg());
         }
 
-       if(c)
+       
+    }
+
+    //降りてきた足を戻す
+    IEnumerator ReturnLeg()
+    {
+        // 3秒間待つ
+        yield return new WaitForSeconds(1.5f);
+
+        legground = false;
+
+        if (target.transform.position.y < legpos.y)
         {
-            b = false;
-            if(target.transform.position.y < legpos.y)
-            {
-                target.transform.localPosition = Vector2.MoveTowards(target.transform.localPosition,legpos, backleg_speed);
-            }
-            
+            target.transform.localPosition = Vector2.MoveTowards(target.transform.localPosition, legpos, backleg_speed);
         }
-
-
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -74,7 +76,7 @@ public class Leg : MonoBehaviour
         if (collision.gameObject.tag == "DownWall")
         {
             Debug.Log("下壁");
-            b = true;
+            legground = true;
         }
     }
 }

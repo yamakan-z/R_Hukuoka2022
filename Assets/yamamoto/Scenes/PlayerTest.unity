@@ -517,8 +517,7 @@ MonoBehaviour:
   rb: {fileID: 471302125}
   target: {fileID: 471302124}
   legdown: 0
-  b: 0
-  c: 0
+  legground: 0
 --- !u!1 &515375524
 GameObject:
   m_ObjectHideFlags: 0
@@ -833,7 +832,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &816123790
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1127,8 +1126,7 @@ MonoBehaviour:
   rb: {fileID: 1009165492}
   target: {fileID: 1009165491}
   legdown: 0
-  b: 0
-  c: 0
+  legground: 0
 --- !u!1 &1267929573
 GameObject:
   m_ObjectHideFlags: 0
@@ -1752,8 +1750,7 @@ MonoBehaviour:
   rb: {fileID: 1807771489}
   target: {fileID: 1807771488}
   legdown: 0
-  b: 0
-  c: 0
+  legground: 0
 --- !u!1 &1839789279
 GameObject:
   m_ObjectHideFlags: 0

@@ -11,6 +11,8 @@ public class LegManager : MonoBehaviour
     [SerializeField, Header("o‚·‘«‚ğƒ‰ƒ“ƒ_ƒ€‚ÉŒˆ‚ß‚é•Ï”")]
     private int randnum;
 
+    private bool randstop;//ƒ‰ƒ“ƒ_ƒ€”¶¬’†’f
+
     enum LegAttckType
     {
         NONE = 0,
@@ -33,12 +35,13 @@ public class LegManager : MonoBehaviour
     public void RandNumCreate()
     {
         randnum = Random.Range(1, 4);
+        randstop = true;
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        //RandNumCreate();
+        randstop = false;
     }
 
     // Update is called once per frame
@@ -52,7 +55,17 @@ public class LegManager : MonoBehaviour
         {
             case LegAttckType.RANDOM:
                 {
+                    if(!randstop)
                     RandNumCreate();
+
+                    
+                    Legs[randnum-1].GetComponent<Leg>().legdown = true;
+
+                    if (Legs[randnum].GetComponent<Leg>().legground)
+                    {
+                        randnum = 0;
+                    }
+
                 }
                 break;
         }
