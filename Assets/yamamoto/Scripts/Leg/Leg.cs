@@ -13,7 +13,9 @@ public class Leg : MonoBehaviour
 
     private float speed;//足のスピード
 
-    public bool a;
+    private float backleg_speed;//足の戻るスピード
+
+    public bool legdown;//足を下す
 
     public bool b;
 
@@ -23,8 +25,12 @@ public class Leg : MonoBehaviour
     void Start()
     {
         speed = 0.5f;
+
+        backleg_speed = 0.1f;
+
         //FreezePositionYをオンにする
         rb.constraints = RigidbodyConstraints2D.FreezePositionY;
+       
 
         legpos = target.transform.localPosition;//足の初期位置を取得
     }
@@ -32,17 +38,21 @@ public class Leg : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(legpos.y);
-       if(a)
+        //Debug.Log(legpos.y);
+        //Debug.Log("x"+legpos.x);
+
+        if (legdown)
         {
             rb.constraints = RigidbodyConstraints2D.None;
+           
             Vector2 force = new Vector2(0.0f, -0.5f);//力を設定
             rb.AddForce(force, ForceMode2D.Force);  //力を加える
         }
 
        if(b)
         {
-            a = false;
+            legdown = false;
+           
             rb.constraints = RigidbodyConstraints2D.FreezePositionY;
         }
 
@@ -51,10 +61,9 @@ public class Leg : MonoBehaviour
             b = false;
             if(target.transform.position.y < legpos.y)
             {
-                target.transform.position = new Vector2(legpos.x, legpos.y + speed);
+                target.transform.localPosition = Vector2.MoveTowards(target.transform.localPosition,legpos, backleg_speed);
             }
             
-           // target.position = Vector2.MoveTowards(legpos, target.position, speed);
         }
 
 

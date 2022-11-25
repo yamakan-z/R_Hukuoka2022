@@ -349,6 +349,9 @@ MonoBehaviour:
   - {fileID: 1807771485}
   - {fileID: 1009165488}
   - {fileID: 471302121}
+  randnum: 0
+  legData:
+    type: 1
 --- !u!4 &442103485
 Transform:
   m_ObjectHideFlags: 0
@@ -378,6 +381,7 @@ GameObject:
   - component: {fileID: 471302123}
   - component: {fileID: 471302122}
   - component: {fileID: 471302125}
+  - component: {fileID: 471302126}
   m_Layer: 0
   m_Name: RightReg
   m_TagString: Enemy
@@ -450,7 +454,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 2bb2d6184698bf2419e104899c43d731, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -470,7 +474,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 471302121}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5.645021, y: 11, z: -105.13716}
+  m_LocalPosition: {x: 5.6, y: 11, z: -105.13716}
   m_LocalScale: {x: 1.6844988, y: 2.5316746, z: 1}
   m_Children:
   - {fileID: 215404125}
@@ -492,12 +496,29 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 8
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 2
+--- !u!114 &471302126
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 471302121}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bd19dff6ab18ca46913060e77af6170, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 471302125}
+  target: {fileID: 471302124}
+  legdown: 0
+  b: 0
+  c: 0
 --- !u!1 &515375524
 GameObject:
   m_ObjectHideFlags: 0
@@ -970,6 +991,7 @@ GameObject:
   - component: {fileID: 1009165490}
   - component: {fileID: 1009165489}
   - component: {fileID: 1009165492}
+  - component: {fileID: 1009165493}
   m_Layer: 0
   m_Name: SenterReg
   m_TagString: Enemy
@@ -1042,7 +1064,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 2bb2d6184698bf2419e104899c43d731, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1062,7 +1084,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1009165488}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.1250212, y: 11, z: -105.13716}
+  m_LocalPosition: {x: 1.1, y: 11, z: -105.13716}
   m_LocalScale: {x: 1.6844988, y: 2.5316746, z: 1}
   m_Children:
   - {fileID: 1935147485}
@@ -1084,12 +1106,29 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 8
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 2
+--- !u!114 &1009165493
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1009165488}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bd19dff6ab18ca46913060e77af6170, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 1009165492}
+  target: {fileID: 1009165491}
+  legdown: 0
+  b: 0
+  c: 0
 --- !u!1 &1267929573
 GameObject:
   m_ObjectHideFlags: 0
@@ -1650,7 +1689,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 2bb2d6184698bf2419e104899c43d731, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1670,7 +1709,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1807771485}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.7203789, y: 11, z: -105.13716}
+  m_LocalPosition: {x: -3.7, y: 11, z: -105.13716}
   m_LocalScale: {x: 1.6844988, y: 2.5316746, z: 1}
   m_Children:
   - {fileID: 2116122346}
@@ -1697,7 +1736,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 1
 --- !u!114 &1807771490
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1712,7 +1751,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 1807771489}
   target: {fileID: 1807771488}
-  a: 0
+  legdown: 0
   b: 0
   c: 0
 --- !u!1 &1839789279
@@ -2699,6 +2738,14 @@ PrefabInstance:
     - target: {fileID: 1076493338105731246, guid: e82bf3ea92d540c4e9020f28b2d27241, type: 3}
       propertyPath: m_TagString
       value: DownWall
+      objectReference: {fileID: 0}
+    - target: {fileID: 1076493338105731247, guid: e82bf3ea92d540c4e9020f28b2d27241, type: 3}
+      propertyPath: m_Size.x
+      value: 1.0855395
+      objectReference: {fileID: 0}
+    - target: {fileID: 1076493338105731247, guid: e82bf3ea92d540c4e9020f28b2d27241, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.04276979
       objectReference: {fileID: 0}
     - target: {fileID: 1076493338776554258, guid: e82bf3ea92d540c4e9020f28b2d27241, type: 3}
       propertyPath: m_Name
