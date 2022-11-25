@@ -833,7 +833,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!212 &816123790
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1160,7 +1160,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shotData:
     frame: 60
-    type: 2
+    type: 1
     bullet: {fileID: 6733769276923494981, guid: a71e429d8b7a02b479737278a95960ab, type: 3}
     bullet_count: 1
 --- !u!4 &1267929575
