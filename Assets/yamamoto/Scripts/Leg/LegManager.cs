@@ -11,7 +11,15 @@ public class LegManager : MonoBehaviour
     [SerializeField, Header("出す足をランダムに決める変数")]
     private int randnum;
 
-    private bool randstop;//ランダム数生成中断
+    public  bool randstop;//ランダム数生成中断
+
+    public bool legreturned;//足が戻ってきた
+
+    bool a=true;
+
+    [Header("足を出す間隔時間")]
+    public int legTime;
+
 
     enum LegAttckType
     {
@@ -34,7 +42,8 @@ public class LegManager : MonoBehaviour
     //ランダムに数字生成
     public void RandNumCreate()
     {
-        randnum = Random.Range(1, 4);
+        randnum = Random.Range(0, 3);
+        //a = true;
         randstop = true;
     }
 
@@ -42,6 +51,7 @@ public class LegManager : MonoBehaviour
     void Start()
     {
         randstop = false;
+        legreturned = true;
     }
 
     // Update is called once per frame
@@ -56,18 +66,36 @@ public class LegManager : MonoBehaviour
             case LegAttckType.RANDOM:
                 {
                     if(!randstop)
-                    RandNumCreate();
-
-                    
-                    Legs[randnum-1].GetComponent<Leg>().legdown = true;
-
-                    if (Legs[randnum].GetComponent<Leg>().legground)
                     {
-                        randnum = 0;
+                        RandNumCreate();
+                        Debug.Log("seisei");
                     }
 
+                    if (legreturned)
+                    {
+
+                        Debug.Log("届いてるか");
+                        Legs[randnum].GetComponent<Leg>().legdown = true;
+
+                        legreturned = false;
+                    }
                 }
                 break;
         }
+    }
+
+    public void LegTurned()
+    {
+        Legs[randnum].GetComponent<Leg>().phase = 1;
+        if (a)
+        {
+            Debug.Log("くぁｗせｄｒｆｔｇｙふじこｌｐ");
+            randstop = false;
+           // legreturned = false;
+            a = false;
+        }
+
+
+        Debug.Log("ハッピー");
     }
 }

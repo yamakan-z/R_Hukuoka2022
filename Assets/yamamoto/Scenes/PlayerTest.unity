@@ -350,6 +350,9 @@ MonoBehaviour:
   - {fileID: 1009165488}
   - {fileID: 471302121}
   randnum: 0
+  randstop: 0
+  legreturned: 0
+  legTime: 0
   legData:
     type: 1
 --- !u!4 &442103485
@@ -518,6 +521,8 @@ MonoBehaviour:
   target: {fileID: 471302124}
   legdown: 0
   legground: 0
+  phase: 1
+  legManager: {fileID: 442103484}
 --- !u!1 &515375524
 GameObject:
   m_ObjectHideFlags: 0
@@ -702,7 +707,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1963691654776653078, guid: 67222b44a720c2b4ba081adccd9b998d, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 67222b44a720c2b4ba081adccd9b998d, type: 3}
@@ -1127,6 +1132,8 @@ MonoBehaviour:
   target: {fileID: 1009165491}
   legdown: 0
   legground: 0
+  phase: 1
+  legManager: {fileID: 442103484}
 --- !u!1 &1267929573
 GameObject:
   m_ObjectHideFlags: 0
@@ -1751,6 +1758,8 @@ MonoBehaviour:
   target: {fileID: 1807771488}
   legdown: 0
   legground: 0
+  phase: 1
+  legManager: {fileID: 442103484}
 --- !u!1 &1839789279
 GameObject:
   m_ObjectHideFlags: 0
