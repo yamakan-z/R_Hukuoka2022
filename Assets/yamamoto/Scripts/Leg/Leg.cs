@@ -76,7 +76,7 @@ public class Leg : MonoBehaviour
             case 3:
                 //Debug.Log("‚ ‚—‚—‚—");
                 legManager.LegTurned();
-                phase = 0;
+               // phase = 0;
                 break;
 
         }

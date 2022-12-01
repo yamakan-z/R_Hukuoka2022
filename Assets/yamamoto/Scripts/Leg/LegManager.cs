@@ -91,7 +91,7 @@ public class LegManager : MonoBehaviour
         {
             Debug.Log("‚­‚Ÿ‚—‚¹‚„‚’‚†‚”‚‡‚™‚Ó‚¶‚±‚Œ‚");
             randstop = false;
-           // legreturned = false;
+            legreturned = false;
             a = false;
         }
 
