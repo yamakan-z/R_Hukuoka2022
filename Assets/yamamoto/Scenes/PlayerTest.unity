@@ -316,6 +316,54 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &258638216
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 258638217}
+  - component: {fileID: 258638218}
+  m_Layer: 0
+  m_Name: WaterGunManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &258638217
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 258638216}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -24.539118, y: -1.3762314, z: -2.9883623}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 816123791}
+  - {fileID: 1942362415}
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &258638218
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 258638216}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dabb7fdf29fe629459179a034243a068, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  WaterGun:
+  - {fileID: 816123789}
+  - {fileID: 1942362412}
 --- !u!1 &442103483
 GameObject:
   m_ObjectHideFlags: 0
@@ -370,7 +418,7 @@ Transform:
   - {fileID: 1009165491}
   - {fileID: 471302124}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &471302121
 GameObject:
@@ -659,7 +707,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1963691654776653077, guid: 67222b44a720c2b4ba081adccd9b998d, type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1963691654776653077, guid: 67222b44a720c2b4ba081adccd9b998d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -832,12 +880,12 @@ GameObject:
   - component: {fileID: 816123790}
   - component: {fileID: 816123792}
   m_Layer: 0
-  m_Name: WaterGun
+  m_Name: LeftWaterGun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!212 &816123790
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -896,13 +944,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 816123789}
-  m_LocalRotation: {x: 0, y: 0.008726558, z: 0, w: 0.999962}
-  m_LocalPosition: {x: -9.618, y: 0.133, z: 0}
+  m_LocalRotation: {x: -0, y: 0.008726557, z: -0, w: 0.9999619}
+  m_LocalPosition: {x: 14.921118, y: -4.75, z: 2.9883623}
   m_LocalScale: {x: 1.0968, y: 1.0103, z: 1}
   m_Children:
   - {fileID: 1267929575}
-  m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_Father: {fileID: 258638217}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 1, z: 0}
 --- !u!114 &816123792
 MonoBehaviour:
@@ -916,62 +964,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cc387a03663f1f44869291836896bb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  move: 4
---- !u!1 &819985193
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 819985194}
-  - component: {fileID: 819985195}
-  m_Layer: 0
-  m_Name: WaterBomGeneration
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &819985194
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 819985193}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.75668347, y: 4.138243, z: -4.4655027}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1100072557}
-  - {fileID: 1802326843}
-  m_Father: {fileID: 0}
-  m_RootOrder: 13
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &819985195
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 819985193}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5a9cac00ce117b041b579a8823c9ff41, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CreateWaterBom:
-  - {fileID: 5004459639461704961, guid: 63a965bfb53f2224b821ed03b0e0e68c, type: 3}
-  - {fileID: 1963691654776653078, guid: 67222b44a720c2b4ba081adccd9b998d, type: 3}
-  - {fileID: 1431120667144139880, guid: c8da82b3bcd0b6c4bb842799558ef4ce, type: 3}
-  rangeA: {fileID: 1100072557}
-  rangeB: {fileID: 1802326843}
-  waterbom_level: 0
-  gimmick_time: 0
-  g_time: 3.5
-  rand: 0
+  move: 3
+  left: 1
+  right: 0
 --- !u!1 &922430674
 GameObject:
   m_ObjectHideFlags: 0
@@ -1189,36 +1184,6 @@ MonoBehaviour:
   legground: 0
   phase: 1
   legManager: {fileID: 442103484}
---- !u!1 &1100072556
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1100072557}
-  m_Layer: 0
-  m_Name: RangeA
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1100072557
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1100072556}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -11, y: 2.17, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 819985194}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1267929573
 GameObject:
   m_ObjectHideFlags: 0
@@ -1360,7 +1325,7 @@ RectTransform:
   m_Children:
   - {fileID: 191816150}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1694,36 +1659,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &1802326842
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1802326843}
-  m_Layer: 0
-  m_Name: RangeB
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1802326843
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1802326842}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9.14, y: 2.17, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 819985194}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1807771485
 GameObject:
   m_ObjectHideFlags: 0
@@ -2564,12 +2499,12 @@ GameObject:
   - component: {fileID: 1942362414}
   - component: {fileID: 1942362413}
   m_Layer: 0
-  m_Name: WaterGun (1)
+  m_Name: RightWaterGun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1942362413
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2582,7 +2517,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cc387a03663f1f44869291836896bb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  move: -4
+  move: -3
+  left: 0
+  right: 1
 --- !u!212 &1942362414
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2641,13 +2578,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1942362412}
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 9.63, y: 0.133, z: 0}
+  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
+  m_LocalPosition: {x: 34.169117, y: 8.03, z: 2.9883623}
   m_LocalScale: {x: 1.0968, y: 1.0103, z: 1}
   m_Children:
   - {fileID: 2086392943}
-  m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_Father: {fileID: 258638217}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!1 &1993701538
 GameObject:
@@ -2979,6 +2916,63 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c8da82b3bcd0b6c4bb842799558ef4ce, type: 3}
+--- !u!1001 &6880997482762347706
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6880997482499137424, guid: ed8e28cde957c8e4c9245b4f1eac6751, type: 3}
+      propertyPath: m_RootOrder
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 6880997482499137424, guid: ed8e28cde957c8e4c9245b4f1eac6751, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.75668347
+      objectReference: {fileID: 0}
+    - target: {fileID: 6880997482499137424, guid: ed8e28cde957c8e4c9245b4f1eac6751, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 4.138243
+      objectReference: {fileID: 0}
+    - target: {fileID: 6880997482499137424, guid: ed8e28cde957c8e4c9245b4f1eac6751, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -4.4655027
+      objectReference: {fileID: 0}
+    - target: {fileID: 6880997482499137424, guid: ed8e28cde957c8e4c9245b4f1eac6751, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6880997482499137424, guid: ed8e28cde957c8e4c9245b4f1eac6751, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6880997482499137424, guid: ed8e28cde957c8e4c9245b4f1eac6751, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6880997482499137424, guid: ed8e28cde957c8e4c9245b4f1eac6751, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6880997482499137424, guid: ed8e28cde957c8e4c9245b4f1eac6751, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6880997482499137424, guid: ed8e28cde957c8e4c9245b4f1eac6751, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6880997482499137424, guid: ed8e28cde957c8e4c9245b4f1eac6751, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6880997482499137427, guid: ed8e28cde957c8e4c9245b4f1eac6751, type: 3}
+      propertyPath: m_Name
+      value: WaterBomGeneration
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ed8e28cde957c8e4c9245b4f1eac6751, type: 3}
 --- !u!1001 &7077754771536246903
 PrefabInstance:
   m_ObjectHideFlags: 0

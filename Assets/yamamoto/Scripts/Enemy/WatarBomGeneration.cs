@@ -21,6 +21,9 @@ public class WatarBomGeneration : MonoBehaviour
     private int waterbom_level;//水爆弾の弾レベル(レベルが上昇すると弾数の多い水爆弾も生成される）
 
     [SerializeField]
+    private int g_level;//生成速度レベル（レベルが上昇すると生成速度が上昇）
+
+   [SerializeField]
     private float gimmick_time;//ギミック発動時間
 
     [SerializeField, Header("水風船が生成される時間")]
@@ -31,7 +34,7 @@ public class WatarBomGeneration : MonoBehaviour
 
     private bool randstop;//ランダム生成中止
 
-    private bool stop;//一回だけの処理
+    private bool g_stop;//一回だけの処理
 
     public void randnum()
     {
@@ -44,27 +47,36 @@ public class WatarBomGeneration : MonoBehaviour
         {
             rand = Random.Range(0, 3);
         }
+
         randstop = true;
     }
 
-    //生成時間を変更する
+    //水風船を生成する時間をランダムで決定する
     public void GenerationTime()
     {
-        //一定時間経過すると水風船の生成速度変更
-        if (gimmick_time > 30.0f && !stop)
+        if(g_level==1)
         {
-            g_time = g_time / 2;
-            stop = true;
+            g_time = Random.Range(3, 6);
+        }
+        else if(g_level==2)
+        {
+            g_time = Random.Range(2.5f, 5);
+        }
+        else if (g_level == 3)
+        {
+            g_time = Random.Range(2, 4.5f);
         }
 
+
+        g_stop = true;
     }
 
     // Start is called before the first frame update
     void Start()
     {
         waterbom_level = 1;
+        g_level = 1;
         randstop = false;
-        stop = false;
     }
 
     // Update is called once per frame
@@ -76,7 +88,11 @@ public class WatarBomGeneration : MonoBehaviour
         //ギミック発動タイムも加算していく
         gimmick_time = gimmick_time + Time.deltaTime;
 
-        GenerationTime();//生成時間を変更する
+        if(!g_stop)
+        {
+            GenerationTime();//生成時間を変更する
+        }
+       
 
         //時間経過で水風船レベル上昇
         //レベル1→レベル2
@@ -84,13 +100,22 @@ public class WatarBomGeneration : MonoBehaviour
         {
             waterbom_level = 2;
         }
+        if (gimmick_time > 15.0f)
+        {
+            g_level = 2;//生成速度レベルUP
+        }
         //レベル2→レベル3
         if (gimmick_time > 20.0f && waterbom_level == 2)
         {
             waterbom_level = 3;
         }
+        if (gimmick_time > 25.0f && g_level == 2)
+        {
+            g_level = 3;//生成速度レベルUP
+        }
 
-       // Debug.Log(gimmick_time);
+
+
 
         // 設定した時間ごとにランダムに生成されるようにする。
         if (time > g_time)
@@ -129,7 +154,7 @@ public class WatarBomGeneration : MonoBehaviour
                 randstop = false;
             }
 
-
+            g_stop = false;
 
         }
     }
