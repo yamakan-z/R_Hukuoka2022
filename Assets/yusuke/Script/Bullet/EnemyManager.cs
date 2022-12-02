@@ -4,38 +4,45 @@ using UnityEngine;
 
 public class EnemyManager : MonoBehaviour
 {
-    public AttackBelow[] m_enemyPrefabs; //敵のプレハブを管理する配列
-    public float m_interval; //出現間隔
+    //public GameObject Wood;
 
-    private float m_timer; //出現タイミングを管理するタイマー
+    [SerializeField]
+    [Tooltip("生成するGameObject")]
+    private GameObject createPrefab;
+    [SerializeField]
+    [Tooltip("生成する範囲A")]
+    private Transform rangeA;
+    [SerializeField]
+    [Tooltip("生成する範囲B")]
+    private Transform rangeB;
 
-    //毎フレーム呼び出される関数
-    private void Upadate()
+    //経過時間
+    private float time;
+
+    private void Update()
     {
-        //出現タイミングを管理するタイマーを更新する
-        m_timer += Time.deltaTime;
+        //Instantiate(Wood);
 
-        //まだ敵が出現するタイミングではない場合
-        //このフレームの処理はここで終える
-        if (m_timer < m_interval) return;
+        //前フレームからの時間を加算していく
+        time = time + Time.deltaTime;
 
-        //出現タイミングを管理するタイマーをリセットする
-        m_timer = 0;
+        //約3秒おきにランダムに生成されるようにする
+        if(time>2.0f)
+        {
+            for (int i = 0; i < 4; i++)
+            {
+                //rangeAとrangeBのx座標の範囲内でランダムな数値を作成
+                float x = Random.Range(rangeA.position.x, rangeB.position.x);
+                //rangeAとrangeBのy座標の範囲内でランダムな数値を作成
+                float y = Random.Range(rangeA.position.y, rangeB.position.y);
 
-        //出現する敵をランダムに決定する
-        var enemyIndex = Random.Range(0, m_enemyPrefabs.Length);
+                //GameObjectを上記で決まったランダムな場所に生成
+                Instantiate(createPrefab, new Vector2(x, y), createPrefab.transform.rotation);
 
-        //出現する敵のプレハブを配列から取得する
-        var enemyPrefab = m_enemyPrefabs[enemyIndex];
+            }
 
-        //敵のゲームオブジェクトを生成する
-        var enemy = Instantiate(enemyPrefab);
-
-        //敵を画面外のどの位置に出現させるかランダムに決定する
-        var respawnType = (RESPAWN_TYPE)Random.Range(
-            0, (int)RESPAWN_TYPE.SIZEOF);
-
-        //敵を初期化する
-        enemy.Init(respawnType);
+            //経過時間リセット
+            time = 0f;
+        }
     }
 }
