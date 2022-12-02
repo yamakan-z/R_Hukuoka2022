@@ -11,22 +11,28 @@ public class Leg : MonoBehaviour
 
     Vector2 legpos;//足の初期位置を入れる
 
-    private float speed;//足のスピード
-
     private float backleg_speed;//足の戻るスピード
 
     public bool legdown;//足を下す
 
-    public bool b;
+    public bool legground;//足が地面についた
 
-    public bool c;
+   // public bool legreturned;//足が初期位置に戻ってきた
+
+    [SerializeField]
+    public int phase = 1;//足アクションフェーズ
+
+    public LegManager legManager;//レッグマネージャー
 
     // Start is called before the first frame update
     void Start()
     {
-        speed = 0.5f;
-
+      
         backleg_speed = 0.1f;
+
+        legManager.GetComponent<LegManager>();
+
+        //legreturned = false;
 
         //FreezePositionYをオンにする
         rb.constraints = RigidbodyConstraints2D.FreezePositionY;
@@ -41,32 +47,63 @@ public class Leg : MonoBehaviour
         //Debug.Log(legpos.y);
         //Debug.Log("x"+legpos.x);
 
-        if (legdown)
+        switch(phase)
         {
-            rb.constraints = RigidbodyConstraints2D.None;
-           
-            Vector2 force = new Vector2(0.0f, -0.5f);//力を設定
-            rb.AddForce(force, ForceMode2D.Force);  //力を加える
-        }
+            case 1:
+                if (legdown)
+                {
+                    rb.constraints = RigidbodyConstraints2D.None;//リジッドボディのフリーズ解除
 
-       if(b)
-        {
-            legdown = false;
-           
-            rb.constraints = RigidbodyConstraints2D.FreezePositionY;
-        }
+                    Vector2 force = new Vector2(0.0f, -0.5f);//力を設定
+                    rb.AddForce(force, ForceMode2D.Force);  //力を加える
 
-       if(c)
+                    phase++;
+                }
+                break;
+            case 2:
+                if (legground)
+                {
+                    legdown = false;
+
+                    rb.constraints = RigidbodyConstraints2D.FreezePositionY;
+
+                    // コルーチンの起動
+                    StartCoroutine(ReturnLeg());
+
+                    //phase++;
+                }
+                break;
+            case 3:
+                //Debug.Log("あｗｗｗ");
+                legManager.LegTurned();
+               // phase = 0;
+                break;
+
+        }
+    }
+
+    //降りてきた足を戻す
+    IEnumerator ReturnLeg()
+    {
+        Debug.Log("ああああああ");
+        // 3秒間待つ
+        yield return new WaitForSeconds(1.5f);
+
+        legground = false;
+
+        if (target.transform.position.y < legpos.y)
         {
-            b = false;
-            if(target.transform.position.y < legpos.y)
+            target.transform.localPosition = Vector2.MoveTowards(target.transform.localPosition, legpos, backleg_speed);
+
+            if(target.transform.localPosition.y == legpos.y && !legManager.legreturned)
             {
-                target.transform.localPosition = Vector2.MoveTowards(target.transform.localPosition,legpos, backleg_speed);
+                Debug.Log("uuuuuuuuuu");
+                //legManager.legreturned = true;
+                //FreezePositionYをオンにする
+                rb.constraints = RigidbodyConstraints2D.FreezePositionY;
+                 phase = 3;
             }
-            
         }
-
-
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -74,7 +111,8 @@ public class Leg : MonoBehaviour
         if (collision.gameObject.tag == "DownWall")
         {
             Debug.Log("下壁");
-            b = true;
+            legground = true;
         }
     }
+
 }

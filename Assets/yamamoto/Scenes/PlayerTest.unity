@@ -332,7 +332,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &442103484
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -350,6 +350,9 @@ MonoBehaviour:
   - {fileID: 1009165488}
   - {fileID: 471302121}
   randnum: 0
+  randstop: 0
+  legreturned: 0
+  legTime: 0
   legData:
     type: 1
 --- !u!4 &442103485
@@ -517,8 +520,9 @@ MonoBehaviour:
   rb: {fileID: 471302125}
   target: {fileID: 471302124}
   legdown: 0
-  b: 0
-  c: 0
+  legground: 0
+  phase: 1
+  legManager: {fileID: 442103484}
 --- !u!1 &515375524
 GameObject:
   m_ObjectHideFlags: 0
@@ -833,7 +837,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &816123790
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -913,6 +917,61 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   move: 4
+--- !u!1 &819985193
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 819985194}
+  - component: {fileID: 819985195}
+  m_Layer: 0
+  m_Name: WaterBomGeneration
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &819985194
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 819985193}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.75668347, y: 4.138243, z: -4.4655027}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1100072557}
+  - {fileID: 1802326843}
+  m_Father: {fileID: 0}
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &819985195
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 819985193}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a9cac00ce117b041b579a8823c9ff41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CreateWaterBom:
+  - {fileID: 5004459639461704961, guid: 63a965bfb53f2224b821ed03b0e0e68c, type: 3}
+  - {fileID: 1963691654776653078, guid: 67222b44a720c2b4ba081adccd9b998d, type: 3}
+  - {fileID: 1431120667144139880, guid: c8da82b3bcd0b6c4bb842799558ef4ce, type: 3}
+  rangeA: {fileID: 1100072557}
+  rangeB: {fileID: 1802326843}
+  waterbom_level: 0
+  gimmick_time: 0
+  g_time: 3.5
+  rand: 0
 --- !u!1 &922430674
 GameObject:
   m_ObjectHideFlags: 0
@@ -1127,8 +1186,39 @@ MonoBehaviour:
   rb: {fileID: 1009165492}
   target: {fileID: 1009165491}
   legdown: 0
-  b: 0
-  c: 0
+  legground: 0
+  phase: 1
+  legManager: {fileID: 442103484}
+--- !u!1 &1100072556
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1100072557}
+  m_Layer: 0
+  m_Name: RangeA
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1100072557
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1100072556}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -11, y: 2.17, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 819985194}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1267929573
 GameObject:
   m_ObjectHideFlags: 0
@@ -1159,7 +1249,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shotData:
-    frame: 60
+    frame: 480
     type: 1
     bullet: {fileID: 6733769276923494981, guid: a71e429d8b7a02b479737278a95960ab, type: 3}
     bullet_count: 1
@@ -1604,6 +1694,36 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1802326842
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1802326843}
+  m_Layer: 0
+  m_Name: RangeB
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1802326843
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1802326842}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 9.14, y: 2.17, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 819985194}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1807771485
 GameObject:
   m_ObjectHideFlags: 0
@@ -1752,8 +1872,9 @@ MonoBehaviour:
   rb: {fileID: 1807771489}
   target: {fileID: 1807771488}
   legdown: 0
-  b: 0
-  c: 0
+  legground: 0
+  phase: 1
+  legManager: {fileID: 442103484}
 --- !u!1 &1839789279
 GameObject:
   m_ObjectHideFlags: 0
