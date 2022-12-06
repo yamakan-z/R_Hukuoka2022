@@ -57,6 +57,7 @@ public class LegGenerationlocation : MonoBehaviour
     {
         time = time + Time.deltaTime;//¶¬ŠJŽnŽžŠÔ‚ð”‚¦‚é
 
+        //‰‰ñ‚Ì‚Ý‚±‚±‚Åˆ—‚ðs‚¤
         if(time > start_time)
         {
             //‘«‚Ì¶¬‚ª‹–‰Â‚³‚ê‚Ä‚¢‚ê‚Î¶¬

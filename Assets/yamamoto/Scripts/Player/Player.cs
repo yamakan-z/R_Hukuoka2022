@@ -18,9 +18,9 @@ public class Player : MonoBehaviour
     // デフォルトの画像(二段階目ダメージの画像）
     public Sprite twosteps_damageImage;
 
-    //アニメーション取得
-    //public Animation anim;
-
+    //ダメージを受けたときの処理
+    private bool isDamage;
+    
     // 画像描画用のコンポーネント
     SpriteRenderer sr;
 
@@ -34,12 +34,16 @@ public class Player : MonoBehaviour
         // SpriteのSpriteRendererコンポーネントを取得
         sr = gameObject.GetComponent<SpriteRenderer>();
 
-        //anim = GetComponent<Animation>();//アニメーションコンポーネント取得
     }
 
-    void Update()
+    void FixedUpdate()
     {
-
+        if(isDamage)
+        {
+            float level = Mathf.Abs(Mathf.Sin(Time.time * 15));//点滅の速さ
+            sr.color = new Color(1f, 1f, 1f, level);//プレイヤーを点滅
+        }
+      
         //--------------移動処理----------------------------
         Vector2 position = transform.position;
 
@@ -75,30 +79,25 @@ public class Player : MonoBehaviour
         {
             Debug.Log("壁と接触した！");
         }
-
-        else if (collision.collider.tag == "Enemy")
-        {
-            Debug.Log("敵と接触した！");
-
-            Damage();//ダメージ処理へ
-        }
     }
 
     //当たり判定（トリガー）
     private void OnTriggerEnter2D(Collider2D collision)//
     {
-        if (collision.gameObject.tag == "Enemy")
+        if (collision.gameObject.tag == "Enemy"&&!isDamage)//無敵処理中は通さない
         {
             Debug.Log("敵と接触した！");
 
-            Damage();//ダメージ処理へ
+            isDamage = true;
+
+            StartCoroutine(Damage());//ダメージ処理へ
         }
     }
 
     /// <summary>
     /// ダメージ処理
     /// </summary>
-    public void Damage()
+    public IEnumerator Damage()
     {
         if (HP == 3)
         {
@@ -131,6 +130,14 @@ public class Player : MonoBehaviour
             SceneManager.LoadScene("Result");
             Debug.Log("死");
         }
+
+        //無敵処理
+        yield return new WaitForSeconds(2.0f);
+
+        // 通常状態に戻す
+        isDamage = false;
+        sr.color = new Color(1f, 1f, 1f, 1f);
+
     }
 }
 
