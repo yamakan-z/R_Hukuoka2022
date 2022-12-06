@@ -35,7 +35,7 @@ public class Leg : MonoBehaviour
         //legreturned = false;
 
         //FreezePositionYをオンにする
-        rb.constraints = RigidbodyConstraints2D.FreezePositionY;
+        //rb.constraints = RigidbodyConstraints2D.FreezePositionY;
        
 
         legpos = target.transform.localPosition;//足の初期位置を取得
@@ -52,7 +52,7 @@ public class Leg : MonoBehaviour
             case 1:
                 if (legdown)
                 {
-                    rb.constraints = RigidbodyConstraints2D.None;//リジッドボディのフリーズ解除
+                    //rb.constraints = RigidbodyConstraints2D.None;//リジッドボディのフリーズ解除
 
                     Vector2 force = new Vector2(0.0f, -0.5f);//力を設定
                     rb.AddForce(force, ForceMode2D.Force);  //力を加える

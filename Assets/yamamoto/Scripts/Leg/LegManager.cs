@@ -5,7 +5,7 @@ using UnityEngine;
 public class LegManager : MonoBehaviour
 {
 
-    [SerializeField, Header("‘«‚Ì”")]
+    [SerializeField, Header("‘«‚Ì¶¬êŠ")]
     List<GameObject> Legs;
 
     [SerializeField, Header("o‚·‘«‚ğƒ‰ƒ“ƒ_ƒ€‚ÉŒˆ‚ß‚é•Ï”")]
@@ -75,7 +75,7 @@ public class LegManager : MonoBehaviour
                     {
 
                         Debug.Log("“Í‚¢‚Ä‚é‚©");
-                        Legs[randnum].GetComponent<Leg>().legdown = true;
+                        //Legs[randnum].GetComponent<Leg>().legdown = true;
 
                         legreturned = false;
                     }

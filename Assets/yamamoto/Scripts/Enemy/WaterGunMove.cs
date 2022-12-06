@@ -19,8 +19,6 @@ public class WaterGunMove : MonoBehaviour
 
     public bool right;
 
-    public bool back;
-
     public GameObject Gunspot;
 
     // Start is called before the first frame update
@@ -80,7 +78,7 @@ public class WaterGunMove : MonoBehaviour
     {
         Debug.Log("kaisi");
         pos = gunspot_pos;
-        //movelock = false;
+        movelock = false;
     }
 
 }
