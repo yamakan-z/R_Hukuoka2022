@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -121,10 +122,9 @@ public class Player : MonoBehaviour
         else if (HP == 1)
         {
             HP--;
+            SceneManager.LoadScene("GameOver");
             Debug.Log("Ž€");
         }
     }
-
-
 }
 

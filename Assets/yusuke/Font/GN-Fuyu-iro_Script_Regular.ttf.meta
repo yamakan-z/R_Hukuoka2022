@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 6a7d61e4f2fcc7c489749c4f2b59a8ae
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - GN-Fuyu-iro_Script
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 82c18255ed79b5d438741b48539b4fe5, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

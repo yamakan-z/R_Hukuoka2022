@@ -9,6 +9,12 @@ EditorBuildSettings:
     path: Assets/yusuke/Scene/Title.unity
     guid: 4faa7cb78309ec7458ba003e5b9fed87
   - enabled: 1
+    path: Assets/yamamoto/Scenes/PlayerTest.unity
+    guid: 1d7f74e51415b38469f25f259227559d
+  - enabled: 1
+    path: Assets/yusuke/Scene/GameOver.unity
+    guid: 002e352b94dc9d4469756cd8e66d042a
+  - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
