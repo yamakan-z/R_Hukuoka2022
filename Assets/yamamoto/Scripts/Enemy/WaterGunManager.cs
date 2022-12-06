@@ -25,7 +25,7 @@ public class WaterGunManager : MonoBehaviour
         w_time = w_time + Time.deltaTime;
 
         //Žw’è‚µ‚½ŽžŠÔ‚É…“S–CoŒ»
-        if(w_time > 60.0f)
+        if(w_time > 40.0f)
         {
             Debug.Log("“®‚«");
             watergunmove[0].left = true;
