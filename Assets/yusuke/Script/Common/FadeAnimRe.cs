@@ -37,7 +37,7 @@ public class FadeAnimRe : MonoBehaviour
 
     void FadeIn()
     {
-        alpha -= 0.01f;
+        alpha -= 0.1f;
         fadealpha.color = new Color(0, 0, 0, alpha);
         if(alpha<=0)
         {
@@ -48,12 +48,12 @@ public class FadeAnimRe : MonoBehaviour
 
     void FadeOut()
     {
-        alpha += 0.001f;
+        alpha += 0.1f;
         fadealpha.color = new Color(0, 0, 0, alpha);
         if(alpha>=1)
         {
             fadeout = false;
-            SceneManager.LoadScene("Title");
+            SceneManager.LoadScene("MainScene");
         }
     }
 

@@ -219,7 +219,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &403495063
 RectTransform:
   m_ObjectHideFlags: 0
@@ -401,7 +401,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 747193373}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 58991ec3763a3ce44a350cd9f817c14c, type: 3}
+  m_Script: {fileID: 11500000, guid: fca31801c84abd745864d3d946f8e47a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Panelfade: {fileID: 403495062}
@@ -450,8 +450,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 747193375}
-        m_TargetAssemblyTypeName: FadeAnim, Assembly-CSharp
-        m_MethodName: SceneMove
+        m_TargetAssemblyTypeName: FadeAnimRe, Assembly-CSharp
+        m_MethodName: OnClickStartButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
