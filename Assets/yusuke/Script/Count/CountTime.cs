@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class CountTime : MonoBehaviour
 {
@@ -18,5 +19,10 @@ public class CountTime : MonoBehaviour
 
         //ŽžŠÔ‚ð•\Ž¦‚·‚é
         timeText.text = countup.ToString("00:00");
+
+        if(countup==0)
+        {
+            SceneManager.LoadScene("Result");
+        }
     }
 }
