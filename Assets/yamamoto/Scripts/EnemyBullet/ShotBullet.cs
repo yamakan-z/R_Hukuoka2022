@@ -35,11 +35,13 @@ public class ShotBullet : MonoBehaviour
 
     private int count = 0;//弾の生成回数をカウント
 
-    bool g_stop=false;//弾の生成を止める
+    public bool g_stop;//弾の生成を止める(デフォルトは止める状態）
 
     // Start is called before the first frame update
     void Start()
     {
+        g_stop = true;
+
         // 追従弾設定の時、プレイヤーオブジェクトを取得する
         switch (shotData.type)
         {

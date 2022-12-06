@@ -8,6 +8,8 @@ TagManager:
   - Enemy
   - DeleteArea
   - DownWall
+  - Gunspot
+  - Stopper
   layers:
   - Default
   - TransparentFX
