@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: a5ddb0f5eca8c34448b8b06c11aed9a2
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - GN-Koharuiro_Sunray
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 9f184dc9d58afa1499d87da0c069d125, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
