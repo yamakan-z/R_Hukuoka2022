@@ -18,6 +18,8 @@ public class Player : MonoBehaviour
     // デフォルトの画像(二段階目ダメージの画像）
     public Sprite twosteps_damageImage;
 
+    //アニメーション取得
+    //public Animation anim;
 
     // 画像描画用のコンポーネント
     SpriteRenderer sr;
@@ -31,6 +33,8 @@ public class Player : MonoBehaviour
 
         // SpriteのSpriteRendererコンポーネントを取得
         sr = gameObject.GetComponent<SpriteRenderer>();
+
+        //anim = GetComponent<Animation>();//アニメーションコンポーネント取得
     }
 
     void Update()
@@ -109,6 +113,8 @@ public class Player : MonoBehaviour
         }
         else if (HP == 2)
         {
+            //anim.Stop();
+
             //画像変更
             sr.sprite = twosteps_damageImage;
 

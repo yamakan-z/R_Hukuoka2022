@@ -53,7 +53,7 @@ public class FadeAnim : MonoBehaviour
         if(alpha>=1)
         {
             fadeout = false;
-            SceneManager.LoadScene("kari Scene");
+            SceneManager.LoadScene("MainScene");
         }
     }
 

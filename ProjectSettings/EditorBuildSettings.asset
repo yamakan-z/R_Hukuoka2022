@@ -9,12 +9,18 @@ EditorBuildSettings:
     path: Assets/yusuke/Scene/Title.unity
     guid: 4faa7cb78309ec7458ba003e5b9fed87
   - enabled: 1
-    path: Assets/yusuke/Scene/New Scene.unity
-    guid: e24ff71d7c1499843b3059439a09aa35
+    path: Assets/yamamoto/Scenes/MainScene.unity
+    guid: 1d7f74e51415b38469f25f259227559d
+  - enabled: 0
+    path: Assets/yusuke/Scene/GameOver.unity
+    guid: 002e352b94dc9d4469756cd8e66d042a
+  - enabled: 0
+    path: Assets/Scenes/SampleScene.unity
+    guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 0
+    path: Assets/yusuke/Scene/kari Scene.unity
+    guid: cd75b0763c7ee3547a07bb20384f2b51
   - enabled: 1
     path: Assets/yusuke/Scene/Result.unity
     guid: 41e1c7c6876131046a7c13e53d662f32
-  - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
   m_configObjects: {}
