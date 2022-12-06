@@ -122,7 +122,7 @@ public class Player : MonoBehaviour
         else if (HP == 1)
         {
             HP--;
-            SceneManager.LoadScene("GameOver");
+            SceneManager.LoadScene("Result");
             Debug.Log("Ž€");
         }
     }
