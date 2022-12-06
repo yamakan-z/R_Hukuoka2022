@@ -14,6 +14,12 @@ public class LegGenerationlocation : MonoBehaviour
     [SerializeField, Header("出す足をランダムに決める変数")]
     private int randnum;
 
+    [Header("足生成開始時間")]
+    public float start_time;
+
+    [SerializeField]
+    private float time;//時間カウント
+
     private bool g_flag;//生成を確認する
 
     enum LegAttckType//足の攻撃方法
@@ -49,9 +55,14 @@ public class LegGenerationlocation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //足の生成が許可されていれば生成
-        if (!g_flag)
-        LegCreate();
+        time = time + Time.deltaTime;//生成開始時間を数える
+
+        if(time > start_time)
+        {
+            //足の生成が許可されていれば生成
+            if (!g_flag)
+                LegCreate();
+        }
     }
 
     public void LegCreate()

@@ -32,7 +32,7 @@ public class WaterGunManager : MonoBehaviour
             shotBullets[0].g_stop = false;
         }
 
-        if (w_time > 90.0f)
+        if (w_time > 70.0f)
         {
             Debug.Log("“®‚«2");
             watergunmove[1].right = true;
