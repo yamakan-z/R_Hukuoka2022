@@ -135,7 +135,6 @@ GameObject:
   - component: {fileID: 381715641}
   - component: {fileID: 381715640}
   - component: {fileID: 381715639}
-  - component: {fileID: 381715638}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -163,19 +162,6 @@ RectTransform:
   m_AnchoredPosition: {x: 30, y: -304}
   m_SizeDelta: {x: 566.448, y: 126.2585}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &381715638
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 381715636}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fca31801c84abd745864d3d946f8e47a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Panelfade: {fileID: 1324458803}
 --- !u!114 &381715639
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -220,9 +206,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 381715638}
-        m_TargetAssemblyTypeName: FadeAnimRe, Assembly-CSharp
-        m_MethodName: SceneMove
+      - m_Target: {fileID: 1324458807}
+        m_TargetAssemblyTypeName: FadeControllerRe, Assembly-CSharp
+        m_MethodName: GameStart
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -625,6 +611,7 @@ GameObject:
   - component: {fileID: 1324458806}
   - component: {fileID: 1324458805}
   - component: {fileID: 1324458804}
+  - component: {fileID: 1324458807}
   m_Layer: 5
   m_Name: Panel
   m_TagString: Untagged
@@ -639,13 +626,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1324458803}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -689,6 +676,21 @@ RectTransform:
   m_AnchoredPosition: {x: -19.90503, y: 0}
   m_SizeDelta: {x: 39.808838, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1324458807
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1324458803}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c05475f2623de54980a1fe9fd29232b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isFadeOut: 0
+  isFadeIn: 1
+  changeSceneName: Title
 --- !u!1 &1485038619
 GameObject:
   m_ObjectHideFlags: 0

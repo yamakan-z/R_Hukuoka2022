@@ -213,13 +213,15 @@ GameObject:
   - component: {fileID: 403495063}
   - component: {fileID: 403495065}
   - component: {fileID: 403495064}
+  - component: {fileID: 403495067}
+  - component: {fileID: 403495066}
   m_Layer: 5
   m_Name: Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &403495063
 RectTransform:
   m_ObjectHideFlags: 0
@@ -236,8 +238,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -19.90503, y: 0}
-  m_SizeDelta: {x: 39.809, y: 0}
+  m_AnchoredPosition: {x: -11.670044, y: 14.419983}
+  m_SizeDelta: {x: 23.33, y: 28.83}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &403495064
 MonoBehaviour:
@@ -246,13 +248,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 403495062}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -277,6 +279,40 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 403495062}
   m_CullTransparentMesh: 1
+--- !u!114 &403495066
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 403495062}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c33f1f2b58a46dc4d8b2ec263debbad8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isFadeOut: 0
+  isFadeIn: 1
+  changeScneneName: MainScene
+--- !u!95 &403495067
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 403495062}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b40352fe8f0d49e4a8e1499b6d9351c0, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &480548823
 GameObject:
   m_ObjectHideFlags: 0
@@ -311,8 +347,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.0044594, y: 0}
-  m_SizeDelta: {x: 1792, y: 828}
+  m_AnchoredPosition: {x: -0.00024676, y: -6.869}
+  m_SizeDelta: {x: 800, y: 383.38}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &480548825
 MonoBehaviour:
@@ -364,7 +400,6 @@ GameObject:
   - component: {fileID: 747193378}
   - component: {fileID: 747193377}
   - component: {fileID: 747193376}
-  - component: {fileID: 747193375}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -389,22 +424,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -263}
-  m_SizeDelta: {x: 515.2507, y: 128.8842}
+  m_AnchoredPosition: {x: -4.55e-13, y: -106}
+  m_SizeDelta: {x: 218.68, y: 71.22}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &747193375
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 747193373}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fca31801c84abd745864d3d946f8e47a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Panelfade: {fileID: 403495062}
 --- !u!114 &747193376
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -449,9 +471,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 747193375}
-        m_TargetAssemblyTypeName: FadeAnimRe, Assembly-CSharp
-        m_MethodName: OnClickStartButton
+      - m_Target: {fileID: 403495066}
+        m_TargetAssemblyTypeName: FadeController, Assembly-CSharp
+        m_MethodName: GameStart
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -682,8 +704,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 62.635, y: 274.0066}
-  m_SizeDelta: {x: 389.98, y: 111.4257}
+  m_AnchoredPosition: {x: 0.0000019073, y: 131.17}
+  m_SizeDelta: {x: 270.53, y: 107.31}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1197795460
 MonoBehaviour:
@@ -698,7 +720,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -775,7 +797,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
