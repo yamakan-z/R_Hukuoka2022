@@ -1644,10 +1644,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: LegManager
       objectReference: {fileID: 0}
-    - target: {fileID: 2543948255743463086, guid: 01c132a6929c25e4a98e2016ca955964, type: 3}
-      propertyPath: start_time
-      value: 90
-      objectReference: {fileID: 0}
     - target: {fileID: 2543948255743463087, guid: 01c132a6929c25e4a98e2016ca955964, type: 3}
       propertyPath: m_RootOrder
       value: 7
