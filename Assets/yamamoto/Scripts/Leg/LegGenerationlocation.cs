@@ -14,6 +14,12 @@ public class LegGenerationlocation : MonoBehaviour
     [SerializeField, Header("出す足をランダムに決める変数")]
     private int randnum;
 
+    [SerializeField, Header("警告マーク")]
+    private GameObject[] warning;
+
+    [SerializeField]
+    private float warnimg_time;//警告表示時間カウント
+
     [Header("足生成開始時間")]
     public float start_time;
 
@@ -49,6 +55,12 @@ public class LegGenerationlocation : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        for(int i = 0;i < 3;i++)
+        {
+            warning[i].SetActive(false);
+        }
+       
+
         RandNumCreate();
     }
 
@@ -58,11 +70,12 @@ public class LegGenerationlocation : MonoBehaviour
         time = time + Time.deltaTime;//生成開始時間を数える
 
         //初回のみここで処理を行う
-        if(time > start_time)
+        if (time > start_time)
         {
             //足の生成が許可されていれば生成
             if (!g_flag)
-                LegCreate();
+                StartCoroutine("Warning");//先に警告マークを出す
+           
         }
     }
 
@@ -81,6 +94,21 @@ public class LegGenerationlocation : MonoBehaviour
                 }
                 break;
         }
+    }
+
+    IEnumerator Warning()//警告マークを表示
+    {
+
+        g_flag = true;//足の出現を中断する
+
+        warning[randnum].SetActive(true);//警告マークを表示
+
+        // 2秒待つ  
+        yield return new WaitForSeconds(2.0f);
+
+        warning[randnum].SetActive(false);//警告マークを非表示
+
+        LegCreate();//足を生成する
     }
 
 

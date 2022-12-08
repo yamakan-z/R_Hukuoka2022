@@ -43,7 +43,7 @@ public class newLeg : MonoBehaviour
         if (collision.gameObject.tag == "DeleteArea")
         {
             // Debug.Log("削除エリアと接触した！");
-            LegManager.GetComponent<LegGenerationlocation>().LegCreate();//足の再生成を行う
+            LegManager.GetComponent<LegGenerationlocation>().StartCoroutine("Warning");//足の再生成を行う
             Destroy(this.gameObject);//足削除
         }
     }
