@@ -18,6 +18,8 @@ public class Player : MonoBehaviour
     // デフォルトの画像(二段階目ダメージの画像）
     public Sprite twosteps_damageImage;
 
+    public CountTime countTime;//時間カウントスクリプト
+
     //ダメージを受けたときの処理
     private bool isDamage;
     
@@ -127,6 +129,10 @@ public class Player : MonoBehaviour
         else if (HP == 1)
         {
             HP--;
+
+            PlayerPrefs.SetFloat("TEST", countTime.countup);
+            PlayerPrefs.Save();
+
             SceneManager.LoadScene("Result");
             Debug.Log("死");
         }
