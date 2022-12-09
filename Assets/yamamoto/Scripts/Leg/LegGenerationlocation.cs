@@ -101,6 +101,8 @@ public class LegGenerationlocation : MonoBehaviour
 
         g_flag = true;//‘«‚ÌoŒ»‚ğ’†’f‚·‚é
 
+        GetComponent<AudioSource>().Play();//Œx‰¹‚ğ–Â‚ç‚·
+
         warning[randnum].SetActive(true);//Œxƒ}[ƒN‚ğ•\¦
 
         // 2•b‘Ò‚Â  
