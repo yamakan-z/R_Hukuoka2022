@@ -17,11 +17,11 @@ public class LegGenerationlocation : MonoBehaviour
     [SerializeField, Header("警告マーク")]
     private GameObject[] warning;
 
-    [SerializeField]
-    private float warnimg_time;//警告表示時間カウント
-
     [Header("足生成開始時間")]
     public float start_time;
+
+    [SerializeField]
+    private float warnimg_time;//警告表示時間カウント
 
     [SerializeField]
     private float time;//時間カウント
