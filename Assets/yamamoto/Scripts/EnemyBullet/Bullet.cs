@@ -38,7 +38,7 @@ public class Bullet : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             Debug.Log("プレイヤーと接触した！");
-            Destroy(this.gameObject);//弾削除
+            //Destroy(this.gameObject);//弾削除
         }
 
         if (collision.gameObject.tag == "DeleteArea")

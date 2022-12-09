@@ -1644,10 +1644,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: LegManager
       objectReference: {fileID: 0}
-    - target: {fileID: 2543948255743463086, guid: 01c132a6929c25e4a98e2016ca955964, type: 3}
-      propertyPath: start_time
-      value: 90
-      objectReference: {fileID: 0}
     - target: {fileID: 2543948255743463087, guid: 01c132a6929c25e4a98e2016ca955964, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -1701,6 +1697,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5023796985548806914, guid: 7fb6d8a8198ae8d4186368966c88f034, type: 3}
+      propertyPath: shotData.frame
+      value: 480
+      objectReference: {fileID: 0}
     - target: {fileID: 5023796985634129269, guid: 7fb6d8a8198ae8d4186368966c88f034, type: 3}
       propertyPath: m_Constraints
       value: 1
@@ -1764,6 +1764,14 @@ PrefabInstance:
     - target: {fileID: 5023796986695453549, guid: 7fb6d8a8198ae8d4186368966c88f034, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5023796986695453550, guid: 7fb6d8a8198ae8d4186368966c88f034, type: 3}
+      propertyPath: w_time
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 5023796986695453550, guid: 7fb6d8a8198ae8d4186368966c88f034, type: 3}
+      propertyPath: left_time
+      value: 70
       objectReference: {fileID: 0}
     - target: {fileID: 5023796986695453550, guid: 7fb6d8a8198ae8d4186368966c88f034, type: 3}
       propertyPath: shotBullets.Array.size
@@ -1901,7 +1909,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7340562809117908609, guid: 70b04ead58220ce42bab47259cf380bd, type: 3}
       propertyPath: speed
-      value: 0.09
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 7340562809117908610, guid: 70b04ead58220ce42bab47259cf380bd, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7340562809117908610, guid: 70b04ead58220ce42bab47259cf380bd, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7340562809117908614, guid: 70b04ead58220ce42bab47259cf380bd, type: 3}
       propertyPath: m_Name
