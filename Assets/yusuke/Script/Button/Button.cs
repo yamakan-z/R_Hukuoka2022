@@ -10,4 +10,9 @@ public class Button : MonoBehaviour
     {
         SceneManager.LoadScene("MainScene");
     }
+
+    public void OnClickTitleButton()
+    {
+        SceneManager.LoadScene("Title");
+    }
 }

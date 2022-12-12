@@ -247,10 +247,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 381715636}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fca31801c84abd745864d3d946f8e47a, type: 3}
+  m_Script: {fileID: 11500000, guid: 91dced2b59661684dbb7fe3208b9976d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Panelfade: {fileID: 1324458803}
 --- !u!114 &381715639
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -296,8 +295,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 381715638}
-        m_TargetAssemblyTypeName: FadeAnimRe, Assembly-CSharp
-        m_MethodName: SceneMove
+        m_TargetAssemblyTypeName: Button, Assembly-CSharp
+        m_MethodName: OnClickTitleButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -550,7 +549,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 0, b: 0, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -752,7 +751,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &982414713
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -762,9 +761,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 982414712}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d4bef2fbce3d5ae49ac1fb9c1cea90de, type: 3}
+  m_Script: {fileID: 11500000, guid: 3c05475f2623de54980a1fe9fd29232b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isFadeOut: 0
+  isFadeIn: 0
+  changeSceneName: Title
 --- !u!4 &982414714
 Transform:
   m_ObjectHideFlags: 0
@@ -994,7 +996,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 0, g: 0, b: 0, a: 0}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:

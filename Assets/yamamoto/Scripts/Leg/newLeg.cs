@@ -36,6 +36,8 @@ public class newLeg : MonoBehaviour
             rb.constraints = RigidbodyConstraints2D.FreezePositionY;
             Debug.Log("下壁");
 
+            GetComponent<AudioSource>().Play();//足音を鳴らす
+
             // コルーチンの起動
             StartCoroutine(ReturnLeg());
         }
