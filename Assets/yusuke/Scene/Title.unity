@@ -1149,6 +1149,7 @@ GameObject:
   - component: {fileID: 403495063}
   - component: {fileID: 403495065}
   - component: {fileID: 403495064}
+  - component: {fileID: 403495066}
   m_Layer: 5
   m_Name: Panel
   m_TagString: Untagged
@@ -1213,6 +1214,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 403495062}
   m_CullTransparentMesh: 1
+--- !u!114 &403495066
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 403495062}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c33f1f2b58a46dc4d8b2ec263debbad8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isFadeOut: 0
+  isFadeIn: 1
+  changeScneneName: MainScene
 --- !u!1 &409583565
 GameObject:
   m_ObjectHideFlags: 0
@@ -1476,7 +1492,9 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 1197795459}
+  - {fileID: 1977786764}
   m_Father: {fileID: 2116592613}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2001,7 +2019,6 @@ GameObject:
   - component: {fileID: 747193378}
   - component: {fileID: 747193377}
   - component: {fileID: 747193376}
-  - component: {fileID: 747193375}
   m_Layer: 5
   m_Name: StartButton
   m_TagString: Untagged
@@ -2029,21 +2046,6 @@ RectTransform:
   m_AnchoredPosition: {x: 43, y: -5}
   m_SizeDelta: {x: 515.2507, y: 128.8842}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &747193375
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 747193373}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c33f1f2b58a46dc4d8b2ec263debbad8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isFadeOut: 0
-  isFadeIn: 0
-  changeScneneName: MainScene
 --- !u!114 &747193376
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2088,7 +2090,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 747193375}
+      - m_Target: {fileID: 403495066}
         m_TargetAssemblyTypeName: FadeController, Assembly-CSharp
         m_MethodName: GameStart
         m_Mode: 1
@@ -2939,16 +2941,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1197795458}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 2116592613}
-  m_RootOrder: 3
+  m_Father: {fileID: 480548824}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 50, y: 135}
+  m_AnchoredPosition: {x: 56, y: 147}
   m_SizeDelta: {x: 786.69, y: 216.58}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1197795460
@@ -2977,7 +2979,7 @@ MonoBehaviour:
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
-    m_MaxSize: 140
+    m_MaxSize: 160
     m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -4358,17 +4360,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1977786763}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1003577855}
-  m_Father: {fileID: 2116592613}
-  m_RootOrder: 4
+  m_Father: {fileID: 480548824}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 43, y: -196}
+  m_AnchoredPosition: {x: 43.004456, y: -196}
   m_SizeDelta: {x: 515.2507, y: 128.8842}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1977786766
@@ -4544,7 +4546,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 160c82bb86221344597faa275dab403b, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -4801,8 +4803,6 @@ RectTransform:
   - {fileID: 480548824}
   - {fileID: 747193374}
   - {fileID: 403495063}
-  - {fileID: 1197795459}
-  - {fileID: 1977786764}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
