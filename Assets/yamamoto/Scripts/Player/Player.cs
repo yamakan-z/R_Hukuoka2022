@@ -9,7 +9,7 @@ public class Player : MonoBehaviour
     [SerializeField]
     private float speed;//プレイヤーの速さ
 
-    [SerializeField] private int HP = 3;//プレイヤーのHP
+    public int HP = 3;//プレイヤーのHP
 
     // デフォルトの画像(ノーダメージ時の画像)
     public Sprite defaultImage;
