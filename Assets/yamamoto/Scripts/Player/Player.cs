@@ -134,8 +134,11 @@ public class Player : MonoBehaviour
         {
             HP--;
 
-            PlayerPrefs.SetFloat("TEST", countTime.countup);
+            //€‚ñ‚¾‚ç¶‚«c‚Á‚½ŠÔ‚ğ•Û‘¶
+            PlayerPrefs.SetInt("TEST", (int)countTime.countup);
             PlayerPrefs.Save();
+
+            Debug.Log(countTime.countup);
 
             SceneManager.LoadScene("Result");
             Debug.Log("€");
