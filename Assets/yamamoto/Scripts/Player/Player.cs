@@ -18,6 +18,8 @@ public class Player : MonoBehaviour
     // デフォルトの画像(二段階目ダメージの画像）
     public Sprite twosteps_damageImage;
 
+    public CountTime countTime;//時間カウントスクリプト
+
     //ダメージを受けたときの処理
     private bool isDamage;
     
@@ -104,6 +106,8 @@ public class Player : MonoBehaviour
             //画像変更
             sr.sprite = damageImage;
 
+            GetComponent<AudioSource>().Play();//足音を鳴らす
+
             PlayerSize = new Vector2(PlayerSize.x * 0.8f, PlayerSize.y * 0.8f);//変更する大きさを設定
 
             gameObject.transform.localScale = PlayerSize; //大きさ変更
@@ -117,6 +121,8 @@ public class Player : MonoBehaviour
             //画像変更
             sr.sprite = twosteps_damageImage;
 
+            GetComponent<AudioSource>().Play();//足音を鳴らす
+
             PlayerSize = new Vector2(PlayerSize.x * 0.8f, PlayerSize.y * 0.8f);//変更する大きさを設定
 
             gameObject.transform.localScale = PlayerSize; //大きさ変更
@@ -127,6 +133,10 @@ public class Player : MonoBehaviour
         else if (HP == 1)
         {
             HP--;
+
+            PlayerPrefs.SetFloat("TEST", countTime.countup);
+            PlayerPrefs.Save();
+
             SceneManager.LoadScene("Result");
             Debug.Log("死");
         }
