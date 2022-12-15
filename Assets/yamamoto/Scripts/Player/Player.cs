@@ -9,7 +9,7 @@ public class Player : MonoBehaviour
     [SerializeField]
     private float speed;//プレイヤーの速さ
 
-    [SerializeField] private int HP = 3;//プレイヤーのHP
+    public int HP = 3;//プレイヤーのHP
 
     // デフォルトの画像(ノーダメージ時の画像)
     public Sprite defaultImage;
@@ -134,8 +134,11 @@ public class Player : MonoBehaviour
         {
             HP--;
 
-            PlayerPrefs.SetFloat("TEST", countTime.countup);
+            //死んだら生き残った時間を保存
+            PlayerPrefs.SetInt("TEST", (int)countTime.countup);
             PlayerPrefs.Save();
+
+            Debug.Log(countTime.countup);
 
             SceneManager.LoadScene("Result");
             Debug.Log("死");
