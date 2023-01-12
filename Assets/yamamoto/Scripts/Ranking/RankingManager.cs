@@ -6,11 +6,14 @@ public class RankingManager : MonoBehaviour
 {
     public GameObject Ranking;//ƒ‰ƒ“ƒLƒ“ƒO‰æ–Ê‚ğ“ü‚ê‚é
 
+    public int[] RankingScore = new int[10];//‚±‚±‚É¶‘¶ŠÔ‚ğ“ü‚ê‚é
+
     // Start is called before the first frame update
     void Start()
     {
         Ranking.SetActive(false);
     }
+
 
     // Update is called once per frame
     void Update()

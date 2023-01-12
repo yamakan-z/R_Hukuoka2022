@@ -3788,6 +3788,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Ranking: {fileID: 167487442}
+  RankingScore: 00000000000000000000000000000000000000000000000000000000000000000000000000000000
 --- !u!4 &1696529624
 Transform:
   m_ObjectHideFlags: 0
