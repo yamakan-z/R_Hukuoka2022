@@ -12,14 +12,17 @@ public class RankingManager : MonoBehaviour
     void Start()
     {
         Ranking.SetActive(false);
+
+        UpdataRanking();
+
     }
 
-
-    // Update is called once per frame
-    void Update()
+    //ランキングの更新
+    public void UpdataRanking()
     {
-        
+
     }
+   
 
     //ランキングボタンが押されたとき
     public void OnTapRankingButton()
