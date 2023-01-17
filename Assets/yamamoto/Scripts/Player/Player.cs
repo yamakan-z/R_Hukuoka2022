@@ -28,6 +28,11 @@ public class Player : MonoBehaviour
 
     Vector2 PlayerSize;//プレイヤーオブジェクトの大きさを入れる変数
 
+
+    //Animatorを入れる変数
+    private Animator animator;
+
+
     void Start()
     {
 
@@ -36,11 +41,16 @@ public class Player : MonoBehaviour
         // SpriteのSpriteRendererコンポーネントを取得
         sr = gameObject.GetComponent<SpriteRenderer>();
 
+
+        //Animatorを取得
+        animator = GetComponent<Animator>();
+
     }
 
     void FixedUpdate()
     {
-        if(isDamage)
+       
+        if (isDamage)
         {
             float level = Mathf.Abs(Mathf.Sin(Time.time * 15));//点滅の速さ
             sr.color = new Color(1f, 1f, 1f, level);//プレイヤーを点滅
@@ -101,6 +111,9 @@ public class Player : MonoBehaviour
     /// </summary>
     public IEnumerator Damage()
     {
+       
+
+
         if (HP == 3)
         {
             //画像変更
@@ -139,6 +152,10 @@ public class Player : MonoBehaviour
             PlayerPrefs.Save();
 
             Debug.Log(countTime.countup);
+
+           // animator.SetBool("doto", false);
+
+           // animator.SetBool("suna", true);
 
             SceneManager.LoadScene("Result");
             Debug.Log("死");

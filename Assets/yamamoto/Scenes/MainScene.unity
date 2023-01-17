@@ -2504,6 +2504,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 867679867, guid: 70b04ead58220ce42bab47259cf380bd, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7340562809117908609, guid: 70b04ead58220ce42bab47259cf380bd, type: 3}
       propertyPath: countTime
       value: 
