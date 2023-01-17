@@ -17,13 +17,21 @@ public class RankingManager : MonoBehaviour
    
     public Text[] ScoreText;//生存時間を書きこむテキスト
 
-
-    public int c;
-
     // Start is called before the first frame update
     void Start()
     {
         Ranking.SetActive(false);
+
+
+        //ここでランキングの操作ができる
+        //PlayerPrefs.SetInt("Rank1", 30);
+        //PlayerPrefs.SetInt("Rank2", 25);
+        //PlayerPrefs.SetInt("Rank3", 20);
+        //PlayerPrefs.SetInt("Rank4", 15);
+        //PlayerPrefs.SetInt("Rank5", 10);
+        //PlayerPrefs.Save();
+
+
 
         UpdataRanking();
 
@@ -35,13 +43,35 @@ public class RankingManager : MonoBehaviour
         Score = PlayerPrefs.GetInt("TEST", 0);
 
         
+        //保存したランキングを呼び出す
         for (int i = 0; i < 5; i++)
         {
-            RankingScore[i] = PlayerPrefs.GetInt("TEST", 0);
+            RankingScore[i] = PlayerPrefs.GetInt(ranking[i], 0);
         }
 
+        //呼び出したランキングと獲得したスコアを比較し入れ替える
+        for (int i = 0; i < 5; i++)
+        {
+            if(Score >= RankingScore[i])
+            {
+                var change = RankingScore[i];
+                RankingScore[i] = Score;
+                Score = change;
+            }
+        }
+
+        //入れ替えた値を保存
+        for (int i = 0; i < 5; i++)
+        {
+            PlayerPrefs.SetInt(ranking[i], RankingScore[i]);
+            PlayerPrefs.Save();
+
+            ScoreText[i].text = RankingScore[i].ToString()+"秒"; 
+        }
+
+        PlayerPrefs.SetInt("TEST", 0);//獲得したスコアの初期化
     }
-   
+
 
     //ランキングボタンが押されたとき
     public void OnTapRankingButton()
