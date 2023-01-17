@@ -8,6 +8,6 @@ public class Title : MonoBehaviour
 {
     public void OnClickStartButton()
     {
-        SceneManager.LoadScene("kari Scene");
+        SceneManager.LoadScene("MainScene");
     }
 }

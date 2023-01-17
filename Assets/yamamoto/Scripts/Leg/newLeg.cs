@@ -36,6 +36,8 @@ public class newLeg : MonoBehaviour
             rb.constraints = RigidbodyConstraints2D.FreezePositionY;
             Debug.Log("下壁");
 
+            GetComponent<AudioSource>().Play();//足音を鳴らす
+
             // コルーチンの起動
             StartCoroutine(ReturnLeg());
         }
@@ -43,7 +45,7 @@ public class newLeg : MonoBehaviour
         if (collision.gameObject.tag == "DeleteArea")
         {
             // Debug.Log("削除エリアと接触した！");
-            LegManager.GetComponent<LegGenerationlocation>().LegCreate();
+            LegManager.GetComponent<LegGenerationlocation>().StartCoroutine("Warning");//足の再生成を行う
             Destroy(this.gameObject);//足削除
         }
     }

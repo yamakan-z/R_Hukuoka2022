@@ -12,6 +12,12 @@ public class WaterGunManager : MonoBehaviour
     [Header("…“S–CoŒ»ŽžŠÔ")]
     public float w_time;
 
+    [SerializeField, Header("¶…“S–CŽžŠÔ")]
+    private float left_time;
+
+    [SerializeField, Header("‰E…“S–CŽžŠÔ")]
+    private float right_time;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -25,14 +31,14 @@ public class WaterGunManager : MonoBehaviour
         w_time = w_time + Time.deltaTime;
 
         //Žw’è‚µ‚½ŽžŠÔ‚É…“S–CoŒ»
-        if(w_time > 40.0f)
+        if(w_time > left_time)
         {
             Debug.Log("“®‚«");
             watergunmove[0].left = true;
             shotBullets[0].g_stop = false;
         }
 
-        if (w_time > 70.0f)
+        if (w_time > right_time)
         {
             Debug.Log("“®‚«2");
             watergunmove[1].right = true;

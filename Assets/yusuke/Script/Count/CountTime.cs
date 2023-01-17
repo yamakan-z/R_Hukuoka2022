@@ -7,7 +7,8 @@ using UnityEngine.SceneManagement;
 public class CountTime : MonoBehaviour
 {
     //カウントアップ
-    private float countup = 0.0f;
+    [Header("生存時間が入る")]
+    public float countup = 0.0f;
 
     //時間を表示するText型の変数
     public Text timeText;
