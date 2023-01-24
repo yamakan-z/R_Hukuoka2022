@@ -17,16 +17,24 @@ public class Player : MonoBehaviour
     public Sprite damageImage;
     // デフォルトの画像(二段階目ダメージの画像）
     public Sprite twosteps_damageImage;
+    // 死亡時の画像
+    public Sprite Death_Image;
 
     public CountTime countTime;//時間カウントスクリプト
 
     //ダメージを受けたときの処理
     private bool isDamage;
+
+    private bool death;//死亡したとき
     
     // 画像描画用のコンポーネント
     SpriteRenderer sr;
 
     Vector2 PlayerSize;//プレイヤーオブジェクトの大きさを入れる変数
+
+    public GameObject Explosion_Ani;//爆発アニメーション
+
+    Animation anim;
 
     void Start()
     {
@@ -49,22 +57,26 @@ public class Player : MonoBehaviour
         //--------------移動処理----------------------------
         Vector2 position = transform.position;
 
-        if (Input.GetKey("left"))
+        if(!death)
         {
-            position.x -= speed;
+            if (Input.GetKey("left"))
+            {
+                position.x -= speed;
+            }
+            if (Input.GetKey("right"))
+            {
+                position.x += speed;
+            }
+            if (Input.GetKey("up"))
+            {
+                position.y += speed;
+            }
+            if (Input.GetKey("down"))
+            {
+                position.y -= speed;
+            }
         }
-        if (Input.GetKey("right"))
-        {
-            position.x += speed;
-        }
-        if (Input.GetKey("up"))
-        {
-            position.y += speed;
-        }
-        if (Input.GetKey("down"))
-        {
-            position.y -= speed;
-        }
+        
 
         transform.position = position;
 
@@ -110,6 +122,8 @@ public class Player : MonoBehaviour
 
             PlayerSize = new Vector2(PlayerSize.x * 0.8f, PlayerSize.y * 0.8f);//変更する大きさを設定
 
+            speed += 0.1f;
+
             gameObject.transform.localScale = PlayerSize; //大きさ変更
 
             HP--;//ダメージ
@@ -125,6 +139,8 @@ public class Player : MonoBehaviour
 
             PlayerSize = new Vector2(PlayerSize.x * 0.8f, PlayerSize.y * 0.8f);//変更する大きさを設定
 
+            speed += 0.1f;
+
             gameObject.transform.localScale = PlayerSize; //大きさ変更
 
 
@@ -134,14 +150,20 @@ public class Player : MonoBehaviour
         {
             HP--;
 
+            death = true;//死亡処理を行う
+
+            sr.sprite = Death_Image;
+
             //死んだら生き残った時間を保存
             PlayerPrefs.SetInt("TEST", (int)countTime.countup);
             PlayerPrefs.Save();
 
             Debug.Log(countTime.countup);
 
-            SceneManager.LoadScene("Result");
-            Debug.Log("死");
+            Explosion_Ani.SetActive(true);
+
+            Invoke("Death", 1.2f); // 関数Test1を3秒後に実行
+
         }
 
         //無敵処理
@@ -151,6 +173,12 @@ public class Player : MonoBehaviour
         isDamage = false;
         sr.color = new Color(1f, 1f, 1f, 1f);
 
+    }
+
+    void Death()
+    {
+       // SceneManager.LoadScene("Result");
+        Debug.Log("死");
     }
 }
 
