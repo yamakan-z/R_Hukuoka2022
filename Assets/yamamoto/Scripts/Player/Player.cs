@@ -20,6 +20,10 @@ public class Player : MonoBehaviour
     // 死亡時の画像
     public Sprite Death_Image;
 
+    [SerializeField] private AudioSource p_se;//オーディオソース
+
+    [SerializeField] private AudioClip[] se;//主人公のSE
+
     public CountTime countTime;//時間カウントスクリプト
 
     //ダメージを受けたときの処理
@@ -34,7 +38,7 @@ public class Player : MonoBehaviour
 
     public GameObject Explosion_Ani;//爆発アニメーション
 
-    Animation anim;
+    public Animator anim;
 
     void Start()
     {
@@ -43,6 +47,7 @@ public class Player : MonoBehaviour
 
         // SpriteのSpriteRendererコンポーネントを取得
         sr = gameObject.GetComponent<SpriteRenderer>();
+        anim = gameObject.GetComponent<Animator>();
 
     }
 
@@ -118,7 +123,9 @@ public class Player : MonoBehaviour
             //画像変更
             sr.sprite = damageImage;
 
-            GetComponent<AudioSource>().Play();//足音を鳴らす
+            Destroy(anim);//ここでアニメーションを消す
+
+            p_se.PlayOneShot(se[0]);//ダメージ音
 
             PlayerSize = new Vector2(PlayerSize.x * 0.8f, PlayerSize.y * 0.8f);//変更する大きさを設定
 
@@ -135,7 +142,7 @@ public class Player : MonoBehaviour
             //画像変更
             sr.sprite = twosteps_damageImage;
 
-            GetComponent<AudioSource>().Play();//足音を鳴らす
+            p_se.PlayOneShot(se[0]);//ダメージ音
 
             PlayerSize = new Vector2(PlayerSize.x * 0.8f, PlayerSize.y * 0.8f);//変更する大きさを設定
 
@@ -152,6 +159,8 @@ public class Player : MonoBehaviour
 
             death = true;//死亡処理を行う
 
+            p_se.PlayOneShot(se[1]);//死亡時のダメージ音
+
             sr.sprite = Death_Image;
 
             //死んだら生き残った時間を保存
@@ -162,7 +171,7 @@ public class Player : MonoBehaviour
 
             Explosion_Ani.SetActive(true);
 
-            Invoke("Death", 1.2f); // 関数Test1を3秒後に実行
+            Invoke("Death", 1.8f); // 関数Test1を3秒後に実行
 
         }
 
@@ -177,7 +186,7 @@ public class Player : MonoBehaviour
 
     void Death()
     {
-       // SceneManager.LoadScene("Result");
+        SceneManager.LoadScene("Result");
         Debug.Log("死");
     }
 }
