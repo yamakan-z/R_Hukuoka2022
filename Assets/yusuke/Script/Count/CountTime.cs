@@ -15,9 +15,12 @@ public class CountTime : MonoBehaviour
 
     [SerializeField]private int tentime = 10;//10秒ごとに秒数経過のテキストを出させるよう
 
-    [SerializeField] private AudioSource audio;
+    [SerializeField]
+    private float extime;//30秒毎のボイスを出す用
 
-    [SerializeField] private AudioClip se;
+   [SerializeField] private AudioSource audio;
+
+    [SerializeField] private AudioClip[] se;
 
     private void Start()
     {
@@ -29,14 +32,33 @@ public class CountTime : MonoBehaviour
         //時間をカウントする
         countup += Time.deltaTime;
 
-        if(countup >= tentime)
+        extime += Time.deltaTime;
+
+        if (countup >= tentime)
         {
+            if(extime >= 30.0f)
+            {
+                audio.PlayOneShot(se[1]);
+                extime = 0;
+            }
+            else
+            {
+                audio.PlayOneShot(se[0]);
+            }
+
             Debug.Log("時間");
-            audio.PlayOneShot(se);
+           
             timeText.text = tentime.ToString()+"秒経過！！";
             tentime += 10;
+            Invoke("TimeText_Write", 2.0f);//二秒後にテキスト非表示
         }
 
         
     }
+
+    void TimeText_Write()
+    {
+        timeText.text = "";//テキスト初期化
+    }
+
 }
